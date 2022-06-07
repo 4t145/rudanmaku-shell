@@ -1,0 +1,86 @@
+{
+  "$schema": "..\\node_modules/@tauri-apps/cli\\schema.json",
+  "build": {
+    "beforeBuildCommand": "npm run build",
+    "beforeDevCommand": "npm run dev",
+    "devPath": "http://localhost:3000",
+    "distDir": "../dist"
+  },
+  "package": {
+    "productName": "rudanmaku-shell",
+    "version": "0.1.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": true,
+      "fs": {
+        "scope": ["$APP/**/*", "$RESOURCE/**/*"]
+      },
+      "shell": {
+        "sidecar": true,
+        "scope": [
+          {"name": "bin/rudanmaku/rudanmaku", "sidecar": true},
+          {"name": "bin/sws/static-web-server", "sidecar": true}
+        ]
+      }
+    },
+    "bundle": {
+      "active": true,
+      "category": "DeveloperTool",
+      "copyright": "",
+      "deb": {
+        "depends": []
+      },
+      "externalBin": [  
+        "bin/rudanmaku/rudanmaku",
+        "bin/sws/static-web-server"
+      ],
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ],
+      "identifier": "Rudanmaku Shell",
+      "longDescription": "提供一个第三方的bilibili直播间弹幕api。与rudanmaku核相对应，此为壳。",
+      "macOS": {
+        "entitlements": null,
+        "exceptionDomain": "",
+        "frameworks": [],
+        "providerShortName": null,
+        "signingIdentity": null
+      },
+      "resources": [
+        "webapp/**/*"
+      ],
+      "shortDescription": "",
+      "targets": "all",
+      "windows": {
+        
+        "certificateThumbprint": null,
+        "digestAlgorithm": "sha256",
+        "timestampUrl": "",
+        "wix": {
+          "language":"zh-CN"
+
+        }
+      }
+    },
+    "security": {
+      "csp": null
+    },
+    "updater": {
+      "active": false
+    },
+    "windows": [
+      {
+        "fullscreen": false,
+        "height": 600,
+        "resizable": true,
+        "title": "ル弾幕シェル",
+        "width": 800
+      }
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+[package]
+name = "rudanmakuki"
+appname = "ル弾幕機"
+version = "0.1.0"
+authors = ["4t145"]
+contact = ["u4t145@163.com", "https://github.com/4t145"]
+brief = "默认的弹幕机哦"
+entry = "index.html"
+repo = "https://github.com/4t145/rudanmakuki"
+# support types: string|number|boolean
+
+
+[[args.number]]
+key = "roomid"
+default = 21672023
+description = "连接的房间id"
+[[args.number]]
+key = "host"
+default = 10200
+description = "core运行的host"
